@@ -4,11 +4,11 @@ from typing import Any
 class Animal:
     alive = []
 
-    def __init__(self, *args: Any,
-                 name: str, health: int, hidden: bool) -> None:
+    def __init__(self, name: str, health: int = 100,
+                 hidden: bool = False, *args: Any) -> None:
         self.name = name
-        self.health = 100
-        self.hidden = False
+        self.health = health
+        self.hidden = hidden
         Animal.alive.append(self)
 
     def die(self) -> None:
